@@ -9,7 +9,7 @@ Descripción breve del proyecto.
 - Lista de características principales
 - Lo que hace único tu proyecto
 
-## 📦 Instalación
+## Instalación
 
 ```bash
 npm install tu-paquete
