@@ -29,7 +29,7 @@ Ejemplos de uso más complejos...
 
 Cómo configurar el entorno de desarrollo...
 
-## 🤝 Contribuir
+## Contribuir
 
 Guidelines para contribuir...
 
@@ -48,7 +48,7 @@ MIT License - ver archivo LICENSE para detalles
 ## 📑 Tabla de contenidos
 - [Instalación](#instalación)
 - [Uso](#Uso)
-- [🤝 Contribuir](#contribuir)
+- [Contribuir](#contribuir)
 
 ### **Screenshots/GIFs** (para proyectos visuales)
 
