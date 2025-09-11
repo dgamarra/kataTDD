@@ -1,4 +1,4 @@
-# Encabezado Nivel 1
+# Encabezado-Nivel-1
 ## Encabezado Nivel 2  
 ### Encabezado Nivel 3
 #### Encabezado Nivel 4
