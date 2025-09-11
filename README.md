@@ -16,7 +16,7 @@ npm install tu-paquete
 # o
 pip install tu-paquete
 ```
-## 🛠️ Uso
+## Uso
 ```python
 import tu_libreria
 resultado = tu_libreria.funcion_ejemplo()
@@ -47,7 +47,7 @@ MIT License - ver archivo LICENSE para detalles
 
 ## 📑 Tabla de contenidos
 - [Instalación](#instalación)
-- [Uso](#🛠️ Uso)
+- [Uso](#Uso)
 - [Contribuir](#contribuir)
 
 ### **Screenshots/GIFs** (para proyectos visuales)
