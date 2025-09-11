@@ -47,7 +47,7 @@ MIT License - ver archivo LICENSE para detalles
 
 ## 📑 Tabla de contenidos
 - [Instalación](#instalación)
-- [Uso](#uso)
+- [Uso](#🛠️ Uso)
 - [Contribuir](#contribuir)
 
 ### **Screenshots/GIFs** (para proyectos visuales)
