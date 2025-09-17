@@ -45,7 +45,7 @@ Proyecto base MERN pensado para arrancar rápidamente aplicaciones web modernas.
 
 ---
 
-## 🛠️ Tecnologías
+## Tecnologías
 - **Backend**: Node.js, Express, Mongoose  
 - **Base de datos**: MongoDB  
 - **Frontend**: React, React Router, Axios  
