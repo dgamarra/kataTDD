@@ -22,7 +22,7 @@ Proporciona una base escalable para crear aplicaciones CRUD con autenticación, 
 
 ---
 
-## 📖 Descripción
+## Descripción
 Proyecto base MERN pensado para arrancar rápidamente aplicaciones web modernas. Incluye:
 
 - Backend en **Node.js** con **Express** (API REST).  
