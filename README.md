@@ -34,7 +34,7 @@ Proyecto base MERN pensado para arrancar rápidamente aplicaciones web modernas.
 
 ---
 
-## ✨ Características
+## Características
 - Registro e inicio de sesión de usuarios (JWT + contraseñas encriptadas).  
 - CRUD completo para una entidad de ejemplo (`items`, `posts`, `tasks`, etc.).  
 - Paginación y búsqueda básica.  
