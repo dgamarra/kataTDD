@@ -2,6 +2,28 @@
 
 > **Nombre del proyecto:** Nombre-del-proyecto
 
+## Tabla de Contenido
+
+- [Descripción](#descripción)  
+- [Características](#características)  
+- [Tecnologías](#tecnologías)  
+- [Estructura del repositorio](#estructura-del-repositorio)  
+- [Requisitos previos](#requisitos-previos)  
+- [Instalación (local)](#instalación-local)  
+- [Variables de entorno](#variables-de-entorno)  
+- [Scripts útiles](#scripts-útiles)  
+  - [Server](#server)  
+  - [Client](#client)  
+  - [Raíz](#raíz-ejemplo-con-concurrently)  
+- [Ejecutar con Docker](#ejecutar-con-docker)  
+- [Despliegue](#despliegue)  
+- [Autenticación](#autenticación)  
+- [Buenas prácticas](#buenas-prácticas)  
+- [Testing](#testing)  
+- [Contribuir](#contribuir)  
+- [Licencia](#licencia)  
+- [Autor](#autor)  
+
 ## Descripción
 
 Aplicación web Full Stack construida con el stack MERN (MongoDB, Express, React y Node.js). Este repositorio contiene el cliente (React) y el servidor (Express/Node) organizados para facilitar el desarrollo, pruebas y despliegue.
