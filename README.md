@@ -1,197 +1,168 @@
-# Proyecto MERN - nombre-del-proyecto
+# Proyecto MERN
 
-Aplicación web full-stack construida con **MongoDB**, **Express**, **React** y **Node.js** (MERN).  
-Proporciona una base escalable para crear aplicaciones CRUD con autenticación, API REST y despliegue listo.
-
----
-
-## 📚 Tabla de contenidos
-1. [Descripción](#descripción)  
-2. [Características](#características)  
-3. [Tecnologías](#tecnologías)  
-4. [Requisitos previos](#requisitos-previos)  
-5. [Instalación (desarrollo)](#instalación-desarrollo)  
-6. [Variables de entorno](#variables-de-entorno)  
-7. [Scripts útiles](#scripts-útiles)  
-8. [Estructura del proyecto](#estructura-del-proyecto)  
-9. [Despliegue](#despliegue)  
-10. [Testing](#testing)  
-11. [Mejoras sugeridas](#mejoras-sugeridas)  
-12. [Contribuir](#contribuir)  
-13. [Licencia y contacto](#licencia-y-contacto)
-
----
+> **Nombre del proyecto:** Nombre-del-proyecto
 
 ## Descripción
-Proyecto base MERN pensado para arrancar rápidamente aplicaciones web modernas. Incluye:
 
-- Backend en **Node.js** con **Express** (API REST).  
-- Base de datos **MongoDB** (local o Atlas).  
-- Frontend en **React** (CRA o Vite).  
-- Autenticación con JWT.  
-- Ejemplo de CRUD completo.  
-- Configuración para despliegue con Docker.  
-
----
+Aplicación web Full Stack construida con el stack MERN (MongoDB, Express, React y Node.js). Este repositorio contiene el cliente (React) y el servidor (Express/Node) organizados para facilitar el desarrollo, pruebas y despliegue.
 
 ## Características
-- Registro e inicio de sesión de usuarios (JWT + contraseñas encriptadas).  
-- CRUD completo para una entidad de ejemplo (`items`, `posts`, `tasks`, etc.).  
-- Paginación y búsqueda básica.  
-- Middleware de autenticación.  
-- Manejo centralizado de errores.  
-- Build optimizado del frontend listo para producción.  
-- Configuración opcional con Docker y docker-compose.  
 
----
+- Autenticación de usuarios (JWT / OAuth opcional)
+- CRUD completo para recursos principales
+- Rutas protegidas y control de roles
+- Persistencia en MongoDB (Mongoose)
+- Build y despliegue preparados para producción
+- Tests unitarios y de integración (Jest / Supertest)
 
 ## Tecnologías
-- **Backend**: Node.js, Express, Mongoose  
-- **Base de datos**: MongoDB  
-- **Frontend**: React, React Router, Axios  
-- **Autenticación**: JWT, bcrypt  
-- **Herramientas**: ESLint, Prettier, dotenv, nodemon  
-- **Opcional**: Docker, docker-compose  
 
----
+- Frontend: React, React Router, Axios, Context / Redux (opcional), Tailwind o CSS Modules
+- Backend: Node.js, Express, Mongoose
+- Base de datos: MongoDB (Atlas o local)
+- Autenticación: JSON Web Tokens (JWT)
+- Tests: Jest, React Testing Library, Supertest
+- Herramientas: ESLint, Prettier, Husky (pre-commit), Docker (opcional)
 
-## 🔑 Requisitos previos
-- Node.js >= 18  
-- npm >= 8 o Yarn  
-- MongoDB (local o Atlas)  
-- Git  
+## Estructura del repositorio
 
----
+```
+/ (raíz)
+├─ /client            # Aplicación React
+│  ├─ /public
+│  └─ /src
+│     ├─ /components
+│     ├─ /pages
+│     ├─ /services
+│     ├─ /hooks
+│     └─ index.js
+├─ /server            # API Express
+│  ├─ /config
+│  ├─ /controllers
+│  ├─ /models
+│  ├─ /routes
+│  ├─ /middlewares
+│  └─ server.js
+├─ .env.example
+├─ docker-compose.yml
+├─ Dockerfile (server)
+├─ Dockerfile.client (opcional)
+├─ package.json (raíz - scripts de conveniencia)
+└─ README.md
+```
 
-## ⚙️ Instalación (desarrollo)
+## Requisitos previos
 
-Clona el repositorio:
+- Node.js v16+ (o LTS actual)
+- npm o yarn
+- MongoDB (local) o una cuenta en MongoDB Atlas
+- (Opcional) Docker y Docker Compose
+
+## Instalación (local)
+
+1. Clonar el repositorio
+
 ```bash
 git clone https://github.com/tu-usuario/nombre-del-proyecto.git
 cd nombre-del-proyecto
 ```
 
-### Backend
+2. Instalar dependencias del servidor
+
 ```bash
-cd backend
+cd server
 npm install
-npm run dev
+# o yarn
 ```
 
-### Frontend
+3. Instalar dependencias del cliente
+
 ```bash
-cd ../frontend
+cd ../client
 npm install
-npm start
+# o yarn
 ```
 
-El backend corre en `http://localhost:5000`  
-El frontend corre en `http://localhost:3000`
+## Variables de entorno
 
----
+Copia `.env.example` a `.env` en la carpeta `server` y añade los valores:
 
-## 🔒 Variables de entorno
-
-Crear un archivo `.env` en `backend/`:
 ```
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/nombre_db
-JWT_SECRET=un_secreto_muy_largo_y_seguro
-JWT_EXPIRES_IN=7d
+MONGODB_URI=mongodb://localhost:27017/nombre-db
+JWT_SECRET=tu_secreto_jwt
 NODE_ENV=development
 ```
 
-Y en `frontend/` (según tu configuración):
-```
-VITE_API_URL=http://localhost:5000/api
-REACT_APP_API_URL=http://localhost:5000/api
-```
+Si usas MongoDB Atlas, reemplaza `MONGODB_URI` por la cadena de conexión provista por Atlas.
 
----
+## Scripts útiles
 
-## 📜 Scripts útiles
+En la raíz del proyecto se pueden definir scripts convenientes que ejecuten cliente y servidor en paralelo (ej. con `concurrently`).
 
-### Backend
-- `npm run dev` — Servidor en modo desarrollo (nodemon).  
-- `npm start` — Servidor en producción.  
-- `npm test` — Ejecuta pruebas.  
-- `npm run lint` — Corre linter.  
-
-### Frontend
-- `npm start` — Inicia app en desarrollo.  
-- `npm run build` — Build de producción.  
-- `npm test` — Ejecuta pruebas unitarias.  
-
----
-
-## 📂 Estructura del proyecto
-```
-/nombre-del-proyecto
-├─ /backend
-│  ├─ src
-│  │  ├─ controllers/
-│  │  ├─ models/
-│  │  ├─ routes/
-│  │  ├─ middlewares/
-│  │  ├─ utils/
-│  │  └─ app.js
-│  └─ package.json
-├─ /frontend
-│  ├─ src
-│  │  ├─ components/
-│  │  ├─ pages/
-│  │  ├─ services/
-│  │  └─ App.jsx
-│  └─ package.json
-├─ docker-compose.yml
-├─ README.md
-└─ .gitignore
+### Server
+```bash
+# desde /server
+npm run dev      # inicia con nodemon en desarrollo
+npm start        # inicia en modo producción
+npm test         # ejecuta tests del backend
 ```
 
----
+### Client
+```bash
+# desde /client
+npm start        # inicia la dev server de React
+npm run build    # build para producción
+npm test         # tests de frontend
+```
 
-## 🚀 Despliegue
+### Raíz (ejemplo con concurrently)
+```bash
+npm install
+npm run dev      # levanta client + server en desarrollo
+```
 
-### Opción 1 — Heroku / Render / Railway / Vercel
-- Compilar frontend con `npm run build`.  
-- Servir estáticos desde Express o frontend separado (Vercel/Netlify).  
-- Configurar variables de entorno en el servicio.  
+## Ejecutar con Docker
 
-### Opción 2 — Docker
-Ejecutar:
+Archivo `docker-compose.yml` incluído para levantar mongo + server + client (opcional). Ejemplo:
+
 ```bash
 docker-compose up --build
 ```
 
----
+## Despliegue
 
-## 🧪 Testing
-- **Backend**: Jest / Mocha + Supertest.  
-- **Frontend**: React Testing Library + Jest.  
-- **E2E**: Cypress (opcional).  
+- Build del cliente: `cd client && npm run build` y servir `client/build` desde Express (o desplegar en Vercel/Netlify y conectar la API por URL).
+- Desplegar la API en Heroku, Render, Railway o en una VM/contener.
 
----
+## Autenticación
 
-## 💡 Mejoras sugeridas
-- Roles y permisos (RBAC).  
-- Refresh tokens y logout seguro.  
-- Subida de archivos (S3/Cloudinary).  
-- Internacionalización (i18n).  
-- CI/CD con GitHub Actions.  
+Se recomienda implementar JWT en cabeceras `Authorization: Bearer <token>` y almacenar tokens en `httpOnly` cookies o en memoria (evitar localStorage para tokens largos si es posible).
 
----
+## Buenas prácticas
 
-## 🤝 Contribuir
-1. Haz un fork del repositorio.  
-2. Crea una rama `feature/nueva-funcionalidad`.  
-3. Realiza commits descriptivos.  
-4. Envía un Pull Request.  
+- Validar y sanitizar datos entrantes (celebrate / Joi / express-validator)
+- Manejar errores centralizados en middleware
+- Políticas CORS bien definidas
+- Logs estructurados (p.ej. Winston)
+- Variables de entorno fuera del repositorio
 
----
+## Testing
 
-## 📄 Licencia y contacto
-- **Licencia**: MIT  
-- **Autor**: Tu Nombre — [tu.email@ejemplo.com](mailto:tu.email@ejemplo.com)  
+- Backend: Jest + Supertest para endpoints
+- Frontend: React Testing Library para componentes y flujos
+- Integración: tests E2E con Cypress (opcional)
 
----
+## Contribuir
 
+1. Fork y crea una rama: `feature/mi-feature` o `fix/bug`
+2. Haz commits pequeños y descriptivos
+3. Abre un Pull Request explicando los cambios
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Ajusta según corresponda.
+
+## Autor
+
+- Nombre del autor / Equipo - correo@ejemplo.com
